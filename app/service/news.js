@@ -5,7 +5,7 @@
 
 const Service = require('egg').Service;
 
-class NewSerivce extends Service {
+class NewsSerivce extends Service {
   async list(page = 1) {
     const { serviceUrl, pageSize } = this.config.news;
     const { data: idList } = await this.ctx.curl(`${serviceUrl}/topstories.json`, {
@@ -26,4 +26,4 @@ class NewSerivce extends Service {
   }
 }
 
-module.exports = NewSerivce;
+module.exports = NewsSerivce;
